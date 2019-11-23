@@ -42,4 +42,4 @@ def index():
 
 # 启动APP
 if (__name__ == "__main__"): 
-    app.run(host = '0.0.0.0', port = 8808) 
+    app.run(host = '0.0.0.0', port = 8808)

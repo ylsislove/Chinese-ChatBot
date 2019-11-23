@@ -98,13 +98,13 @@ def train():
         for (batch, (inp, targ)) in enumerate(dataset.take(steps_per_epoch)):
             batch_loss = seq2seqModel.train_step(inp, targ, target_token, enc_hidden)
             total_loss += batch_loss
-            print(batch_loss.numpy())
+            # print(batch_loss.numpy())
         # 计算每一步消耗的时间
         step_time_epoch = (time.time() - start_time_epoch) / steps_per_epoch
         # 计算每一步的平均loss
         step_loss = total_loss / steps_per_epoch
         # 计算当前训练的步数
-        current_steps = +steps_per_epoch
+        current_steps += steps_per_epoch
         # 计算全部训练每步的平均时间
         step_time_total = (time.time() - start_time) / current_steps
         # 打印出相关的参数
